@@ -11,6 +11,7 @@ const Search = styled('div')(({ theme }) => ({
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
+
   marginLeft: 0,
   width: '100%',
   [theme.breakpoints.up('sm')]: {
@@ -38,9 +39,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      width: '12ch',
+      width: '60ch',
       '&:focus': {
-        width: '20ch',
+        width: '80ch',
       },
     },
   },
@@ -56,6 +57,7 @@ const SearchInput = () => {
     () => {
       if (debouncedSearchTerm) {
         setIsSearching(true);
+        console.log('buscando....');
         // searchCharacters(debouncedSearchTerm).then((results) => {
         //   setIsSearching(false);
         //   setResults(results);
@@ -64,7 +66,7 @@ const SearchInput = () => {
         setIsSearching(false);
       }
     },
-    [debouncedSearchTerm] // Only call effect if debounced search term changes
+    [debouncedSearchTerm]
   );
 
   return (
@@ -74,8 +76,9 @@ const SearchInput = () => {
       </SearchIconWrapper>
       <StyledInputBase
         placeholder="Search…"
-        inputProps={{ 'aria-label': 'search' }}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        value={searchTerm}
+        inputProps={{ 'aria-label': 'search'}}
+        onChange={(e) => {setSearchTerm(e.target.value.replace(/[^\w\s]/gi, ""))}}
       />
     </Search>
   )

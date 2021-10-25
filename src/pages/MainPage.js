@@ -1,5 +1,6 @@
 import { Grid } from '@mui/material'
 import React from 'react'
+import ProductList from '../components/products/ProductList'
 
 const MainPage = () => {
     return (
@@ -7,8 +8,8 @@ const MainPage = () => {
             <Grid item xs>
                 filtros  quizas
             </Grid>
-            <Grid item xs={8}>
-                items
+            <Grid item xs={10}>
+                <ProductList />
             </Grid>
         </Grid>
     )
