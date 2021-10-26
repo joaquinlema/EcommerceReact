@@ -2,11 +2,11 @@ import React from 'react'
 
 const DetailPage = ({ match }) => {
 
-    const {params: { Id }} = match;
+    const {params: { id }} = match;
 
     return (
         <div>
-            {Id}            
+            {id}            
         </div>
     )
 }

@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import SearchInput from './SearchInput';
 import LogMenu from './LogMenu';
 import StoreRoundedIcon from '@mui/icons-material/StoreRounded';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -22,6 +23,8 @@ const Navbar = () => {
                         color="inherit"
                         aria-label="open drawer"
                         sx={{ mr: 2 }}
+                        component={Link} 
+                        to="/"
                     >
                         <StoreRoundedIcon />
                     </IconButton>

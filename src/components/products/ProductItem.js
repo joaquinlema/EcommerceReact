@@ -28,17 +28,17 @@ const ProductItem = ({ id }) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Link to={`/productDetail/${id}`}>
-                    <Button size="small" color="primary">
+                <Button size="small" color="primary">
+                    <Link to={`/productDetail/${id}`} underline="hover">
                         Details
-                    </Button>
-                </Link>
+                    </Link>
+                </Button>
             </CardActions>
         </Card>
     );
 }
 
-ProductItem.propTypes  = {
+ProductItem.propTypes = {
     id: PropTypes.number.isRequired,
 }
 
