@@ -29,7 +29,7 @@ const ProductItem = ({ id }) => {
             </CardActionArea>
             <CardActions>
                 <Button size="small" color="primary">
-                    <Link to={`/productDetail/${id}`} underline="hover">
+                    <Link to={`/productDetail/${id}`} underline="none" style={{textDecoration:'none'}}>
                         Details
                     </Link>
                 </Button>

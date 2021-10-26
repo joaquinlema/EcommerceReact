@@ -1,6 +1,8 @@
+import React from 'react';
 import { AccountCircle } from '@mui/icons-material';
-import { IconButton, Menu, MenuItem } from '@mui/material';
-import React from 'react'
+import { Button, IconButton, ListItemIcon, ListItemText, Menu, MenuItem, Typography } from '@mui/material';
+import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
+import { Link } from 'react-router-dom';
 
 const LogMenu = () => {
 
@@ -15,33 +17,29 @@ const LogMenu = () => {
     };
     return (
         <div>
-            <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
-            >
-                <AccountCircle />
-            </IconButton>
+            <Button onClick={handleMenu} variant="text" color="inherit" size="large" startIcon={<AccountCircle />}>
+                Nombre persona
+            </Button>
             <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
                 anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
+                    vertical: 'bottom',
+                    horizontal: 'left',
                 }}
-                keepMounted
                 transformOrigin={{
                     vertical: 'top',
-                    horizontal: 'right',
+                    horizontal: 'left',
                 }}
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem component={Link} to='/compras' onClick={handleClose}>
+                    <ListItemIcon>
+                        <ShoppingCartRoundedIcon fontSize="small" />
+                    </ListItemIcon>
+                    <ListItemText>Consultar Compra</ListItemText>
+                </MenuItem>
             </Menu>
         </div>
     )
