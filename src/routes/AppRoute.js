@@ -1,18 +1,23 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import DetailPage from '../pages/DetailPage';
 import MainPage from '../pages/MainPage';
+import NoMatchRoute from '../pages/NoMatchRoute';
 import PrivateRoute from './PrivateRoute';
 
 const AppRoute = () => {
     return (
-            <Switch>
-                <PrivateRoute exact={true} path='/'>
-                    <MainPage />
-                </PrivateRoute>
-                {/* <Route exact path='/register' >
+        <Switch>
+            <PrivateRoute exact={true} path='/'>
+                <MainPage />
+            </PrivateRoute>
+            <PrivateRoute path="/productDetail/:id" component={DetailPage} />
+            <Route component={NoMatchRoute} />
+
+            {/* <Route exact path='/register' >
                     <Register />
                 </Route> */}
-            </Switch>
+        </Switch>
     );
 };
 

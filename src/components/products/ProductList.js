@@ -19,7 +19,7 @@ const ProductList = () => {
             <Grid container spacing={2}>
                 {arr.map((elem, index) => (
                     <Grid item xs={4}>
-                        <ProductItem key={index} />
+                        <ProductItem key={index} id={index}/>
                     </Grid>
                 ))}
             </Grid>
