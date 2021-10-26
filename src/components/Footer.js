@@ -7,9 +7,9 @@ import Link from '@mui/material/Link';
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary">
+    <Typography variant="body2" color="inherit">
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="#">
         Your Website
       </Link>{' '}
       {new Date().getFullYear()}
@@ -24,29 +24,22 @@ export default function Footer() {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '85vh',
-        marginTop: 'calc(5% + 60px)',
         bottom: 0,
-        position: 'sticky'
       }}
     >
       <CssBaseline />
-     
       <Box
         component="footer"
         sx={{
           py: 3,
           px: 2,
           mt: 'auto',
-          backgroundColor: (theme) =>
-            theme.palette.mode === 'light'
-              ? theme.palette.grey[200]
-              : theme.palette.grey[800],
+          backgroundColor: '#5B6978'
         }}
       >
         <Container maxWidth="sm">
-          <Typography variant="body1">
-            My sticky footer can be found here.
+          <Typography variant="body1" color="inherit">
+            Dev Lema Joaquin
           </Typography>
           <Copyright />
         </Container>
