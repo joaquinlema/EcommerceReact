@@ -6,27 +6,32 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {green} from '@mui/material/colors';
+import { green } from '@mui/material/colors';
 
 const ProductItem = ({ data }) => {
 
-    const { id, title, price, thumbnail,shipping } = data;
+    const { id, title, price, thumbnail, shipping } = data;
 
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
                 <CardMedia
+                    sx={{
+                        width: '40%',
+                        marginLeft:'27%'
+                    }}
                     component="img"
                     height="140"
                     image={thumbnail}
                     alt="image"
+                    width='40%'
                 />
-                <CardContent style={{height:'100%'}}>
+                <CardContent sx={{ height: '100%' }}>
                     <Typography gutterBottom variant="h6" component="div">
                         {title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                       $ {price}
+                    <Typography variant="subtitle2" gutterBottom component="div" color="text.secondary">
+                        $ {price}
                     </Typography>
                     <Typography variant="caption" display="block" gutterBottom color={green[900]}>
                         {(shipping.free_shipping) ? 'Envio Gratis' : null}
