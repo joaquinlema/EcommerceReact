@@ -14,7 +14,7 @@ const ProductList = () => {
                 loading
                     ? <ProductLoading />
                     :
-                    <Grid container spacing={2} alignItems="stretch">
+                    <Grid container spacing={1} alignItems="stretch">
                         {searchResults.map((elem, index) => (
                             <Grid item xs={4} key={index}>
                                 <ProductItem data={elem} />

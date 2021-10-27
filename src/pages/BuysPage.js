@@ -7,14 +7,8 @@ const BuysPage = () => {
     return (
         <Box
             sx={{
-                width: '100%',
-                height: 600,
                 marginTop: '3%',
                 backgroundColor: 'primary.dark',
-                '&:hover': {
-                    backgroundColor: 'primary.main',
-                    opacity: [0.9, 0.8, 0.7],
-                },
             }}
         >
             <Container maxWidth="md">

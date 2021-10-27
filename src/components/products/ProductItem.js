@@ -3,26 +3,44 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import { Avatar, Button, CardActionArea, CardActions, CardHeader, IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { green } from '@mui/material/colors';
+import { lightBlue, green, red } from '@mui/material/colors';
+import RoomRoundedIcon from '@mui/icons-material/RoomRounded';
+import PaymentRoundedIcon from '@mui/icons-material/PaymentRounded';
 
 const ProductItem = ({ data }) => {
 
-    const { id, title, price, thumbnail, shipping } = data;
+    const { id, title, price, thumbnail, shipping, address, accepts_mercadopago } = data;
 
     return (
         <Card
             sx={{
-                maxWidth: 345,
                 backgroundColor: '#fffff',
             }}>
-            <CardActionArea>
+            <CardActionArea component={Link} to={`/productDetail/${id}`}>
+                <CardHeader
+                    avatar={
+                        <Avatar sx={{ bgcolor: green[500] }} aria-label="recipe">
+                            <RoomRoundedIcon />
+                        </Avatar>
+                    }
+                    title={address.state_name}
+                    subheader={address.city_name}
+                    action={
+                        (accepts_mercadopago) ?
+                            <IconButton aria-label="settings">
+                                <PaymentRoundedIcon  sx={{ color: lightBlue[500] }}/>
+                            </IconButton>
+                            :
+                            null
+                    }
+                />
                 <CardMedia
                     sx={{
-                        width: '40%',
-                        marginLeft: '27%'
+                        width: '30%',
+                        marginLeft: '30%'
                     }}
                     component="img"
                     height="140"
@@ -45,11 +63,11 @@ const ProductItem = ({ data }) => {
             <CardActions>
                 <Button size="small" color="primary">
                     <Link to={`/productDetail/${id}`} underline="none" style={{ textDecoration: 'none' }}>
-                        More
+                        Info
                     </Link>
                 </Button>
             </CardActions>
-        </Card>
+        </Card >
     );
 }
 

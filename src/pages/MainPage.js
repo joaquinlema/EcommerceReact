@@ -8,8 +8,6 @@ const MainPage = () => {
     return (
         <Box
             sx={{
-                width: '100%',
-                height: 600,
                 marginTop: '1%',
                 padding: '2%',
                 backgroundColor: 'rgb(234, 238, 243)',
