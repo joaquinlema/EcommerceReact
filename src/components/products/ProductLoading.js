@@ -3,14 +3,14 @@ import { Grid, Skeleton, Stack } from '@mui/material';
 
 const ProductLoading = () => {
     return (
-        <Grid container>
+        <Grid container spacing={3}>
             {Array.from(new Array(6)).map((elem, index) => (
                 <Grid item xs={4} key={index}>
-                    <Stack spacing={1}>
-                        <Skeleton variant="text" width={210} height={118}/>
-                        <Skeleton variant="circular" width={40} height={40} />
-                        <Skeleton variant="rectangular" width={210} height={118} />
-                    </Stack>
+                    <Skeleton sx={{ height: 190 }} animation="wave" variant="rectangular" />
+                    <Skeleton animation="wave" height={25} width="30%" style={{ marginBottom: 6 }} />
+                    <Skeleton animation="wave" height={10} style={{ marginBottom: 6 }} />
+                    <Skeleton animation="wave" height={10} style={{ marginBottom: 6 }} />
+                    <Skeleton animation="wave" height={10} width="30%" />
                 </Grid>
             ))
             }
