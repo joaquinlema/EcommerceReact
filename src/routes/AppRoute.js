@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import ComprasPage from '../pages/ComprasPage';
+import BuysPage from '../pages/BuysPage';
 import DetailPage from '../pages/DetailPage';
 import MainPage from '../pages/MainPage';
 import NoMatchRoute from '../pages/NoMatchRoute';
@@ -13,7 +13,7 @@ const AppRoute = () => {
                 <MainPage />
             </PrivateRoute>
             <PrivateRoute path="/productDetail/:id" component={DetailPage} />
-            <PrivateRoute path="/compras" component={ComprasPage} />
+            <PrivateRoute path="/compras" component={BuysPage} />
 
             <Route component={NoMatchRoute} />
 

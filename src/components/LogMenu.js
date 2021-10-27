@@ -1,6 +1,6 @@
 import React from 'react';
 import { AccountCircle } from '@mui/icons-material';
-import { Button, IconButton, ListItemIcon, ListItemText, Menu, MenuItem, Typography } from '@mui/material';
+import { Button, ListItemIcon, ListItemText, Menu, MenuItem } from '@mui/material';
 import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
 import { Link } from 'react-router-dom';
 
