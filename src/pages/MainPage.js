@@ -3,6 +3,7 @@ import React from 'react'
 import ProductList from '../components/products/ProductList'
 
 const MainPage = () => {
+
     return (
         <Grid container>
             <Grid item xs>
