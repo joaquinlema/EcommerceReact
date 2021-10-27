@@ -23,10 +23,10 @@ const ProductList = () => {
                 loading
                     ? <ProductLoading />
                     :
-                    <Grid container spacing={2}>
+                    <Grid container spacing={2} alignItems="stretch">
                         {searchResults.map((elem, index) => (
                             <Grid item xs={4} key={index}>
-                                <ProductItem id={index} />
+                                <ProductItem data={elem} />
                             </Grid>
                         ))}
                     </Grid>

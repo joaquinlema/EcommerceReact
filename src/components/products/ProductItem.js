@@ -6,31 +6,37 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import {green} from '@mui/material/colors';
 
-const ProductItem = ({ id }) => {
+const ProductItem = ({ data }) => {
+
+    const { id, title, price, thumbnail,shipping } = data;
+
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
                 <CardMedia
                     component="img"
                     height="140"
-                    image="/static/images/cards/contemplative-reptile.jpg"
-                    alt="green iguana"
+                    image={thumbnail}
+                    alt="image"
                 />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        Lizard
+                <CardContent style={{height:'100%'}}>
+                    <Typography gutterBottom variant="h6" component="div">
+                        {title}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000
-                        species, ranging across all continents except Antarctica
+                       $ {price}
+                    </Typography>
+                    <Typography variant="caption" display="block" gutterBottom color={green[900]}>
+                        {(shipping.free_shipping) ? 'Envio Gratis' : null}
                     </Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions>
                 <Button size="small" color="primary">
-                    <Link to={`/productDetail/${id}`} underline="none" style={{textDecoration:'none'}}>
-                        Details
+                    <Link to={`/productDetail/${id}`} underline="none" style={{ textDecoration: 'none' }}>
+                        More
                     </Link>
                 </Button>
             </CardActions>
@@ -39,7 +45,7 @@ const ProductItem = ({ id }) => {
 }
 
 ProductItem.propTypes = {
-    id: PropTypes.number.isRequired,
+    data: PropTypes.object.isRequired,
 }
 
 export default ProductItem;
