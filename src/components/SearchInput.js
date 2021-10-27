@@ -3,6 +3,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import { styled, alpha } from '@mui/material/styles';
 import useDebounce from '../utils/UseDebounce';
+import { getSearhItems, setLoading } from '../actions/SearchActions';
+import { useDispatch } from 'react-redux';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -49,23 +51,19 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const SearchInput = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [isSearching, setIsSearching] = useState(false);
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
+  const dispatch = useDispatch();
 
   useEffect(
     () => {
       if (debouncedSearchTerm) {
-        setIsSearching(true);
-        console.log('buscando....');
-        // searchCharacters(debouncedSearchTerm).then((results) => {
-        //   setIsSearching(false);
-        //   setResults(results);
-        // });
+        dispatch(setLoading(true));
+        dispatch(getSearhItems(debouncedSearchTerm));
       } else {
-        setIsSearching(false);
+        dispatch(setLoading(false));
       }
     },
-    [debouncedSearchTerm]
+    [debouncedSearchTerm, dispatch]
   );
 
   return (
@@ -76,8 +74,8 @@ const SearchInput = () => {
       <StyledInputBase
         placeholder="Search…"
         value={searchTerm}
-        inputProps={{ 'aria-label': 'search'}}
-        onChange={(e) => {setSearchTerm(e.target.value.replace(/[^\w\s]/gi, ""))}}
+        inputProps={{ 'aria-label': 'search' }}
+        onChange={(e) => { setSearchTerm(e.target.value.replace(/[^\w\s]/gi, "")) }}
       />
     </Search>
   )

@@ -1,4 +1,4 @@
-import { ERROR, GET_SEARCH_ITEMS } from "../constants/types"
+import { ERROR, GET_SEARCH_ITEMS, SET_LOADING } from "../constants/types"
 import SearchService from "../service/SearchService";
 
 export const getSearhItems = query => async dispatch => {
@@ -16,4 +16,13 @@ export const getSearhItems = query => async dispatch => {
             payload: `Error ${error}`
         });
     }
+}
+
+export const setLoading = status => dispatch=> {
+    
+    dispatch({
+        type: SET_LOADING,
+        payload:status
+    });
+
 }

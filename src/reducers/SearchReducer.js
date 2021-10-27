@@ -1,4 +1,4 @@
-import { ERROR, GET_SEARCH_ITEMS } from "../constants/types";
+import { ERROR, GET_SEARCH_ITEMS, SET_LOADING } from "../constants/types";
 
 const initialState = {
     searchResults: [],
@@ -15,6 +15,11 @@ export default function (state = initialState, action) {
                 ...state,
                 searchResults: payload.data,
                 loading: false
+            }
+        case SET_LOADING:
+            return {
+                ...state,
+                loading: payload.status
             }
         case ERROR:
             return {
