@@ -9,6 +9,7 @@ const BuysPage = () => {
             sx={{
                 width: '100%',
                 height: 600,
+                marginTop: '3%',
                 backgroundColor: 'primary.dark',
                 '&:hover': {
                     backgroundColor: 'primary.main',
@@ -16,7 +17,7 @@ const BuysPage = () => {
                 },
             }}
         >
-            <Container maxWidth="sm">
+            <Container maxWidth="md">
                 <Grid container spacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                     <Grid item xs={12}>
                         Compras

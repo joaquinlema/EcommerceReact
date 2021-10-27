@@ -13,12 +13,16 @@ const ProductItem = ({ data }) => {
     const { id, title, price, thumbnail, shipping } = data;
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card
+            sx={{
+                maxWidth: 345,
+                backgroundColor: '#fffff',
+            }}>
             <CardActionArea>
                 <CardMedia
                     sx={{
                         width: '40%',
-                        marginLeft:'27%'
+                        marginLeft: '27%'
                     }}
                     component="img"
                     height="140"

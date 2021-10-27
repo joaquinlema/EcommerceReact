@@ -1,5 +1,5 @@
-import { Grid, Paper } from '@mui/material';
-import React from 'react'
+import { Grid } from '@mui/material';
+import React, { Fragment } from 'react'
 import { useSelector } from 'react-redux';
 import ProductItem from './ProductItem';
 import ProductLoading from './ProductLoading';
@@ -9,16 +9,7 @@ const ProductList = () => {
     const { searchResults, loading } = useSelector(state => state.SearchReducer);
 
     return (
-        <Paper elevation={3}
-            sx={{
-                py: 3,
-                px: 2,
-                mt: 'auto',
-                backgroundColor: (theme) =>
-                    theme.palette.mode === 'light'
-                        ? theme.palette.grey[200]
-                        : theme.palette.grey[800],
-            }}>
+        <Fragment>
             {
                 loading
                     ? <ProductLoading />
@@ -31,7 +22,7 @@ const ProductList = () => {
                         ))}
                     </Grid>
             }
-        </Paper>
+        </Fragment>
     )
 }
 
