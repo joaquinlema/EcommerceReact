@@ -13,13 +13,13 @@ export default function (state = initialState, action) {
         case GET_SEARCH_ITEMS:
             return {
                 ...state,
-                searchResults: payload.data,
+                searchResults: payload[0].results,
                 loading: false
             }
         case SET_LOADING:
             return {
                 ...state,
-                loading: payload.status
+                loading: payload
             }
         case ERROR:
             return {

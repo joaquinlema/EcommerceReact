@@ -5,14 +5,18 @@ import {
 import Navbar from './components/Navbar';
 import AppRoute from './routes/AppRoute';
 import Footer from './components/Footer';
+import { Provider } from 'react-redux';
+import store from './store';
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <AppRoute />
-      <Footer />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Navbar />
+        <AppRoute />
+        <Footer />
+      </Router>
+    </Provider>
   );
 }
 

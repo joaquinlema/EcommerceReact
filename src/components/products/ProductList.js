@@ -19,7 +19,6 @@ const ProductList = () => {
                         ? theme.palette.grey[200]
                         : theme.palette.grey[800],
             }}>
-
             {
                 loading
                     ? <ProductLoading />

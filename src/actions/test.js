@@ -1,4 +1,4 @@
-const mockData = {
+const mockData = [{
     "site_id": "MLA",
     "query": "Motorola G6",
     "paging": {
@@ -213,6 +213,6 @@ const mockData = {
             "catalog_listing": true
         }
     ]
- }
+ }];
 
  export default mockData;

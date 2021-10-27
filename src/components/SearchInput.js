@@ -58,7 +58,10 @@ const SearchInput = () => {
     () => {
       if (debouncedSearchTerm) {
         dispatch(setLoading(true));
-        dispatch(getSearhItems(debouncedSearchTerm));
+        //INFO: esto es un test para ver la carga nada mas quitar
+        setTimeout(() => {
+          dispatch(getSearhItems(debouncedSearchTerm));
+        }, 3000);
       } else {
         dispatch(setLoading(false));
       }
