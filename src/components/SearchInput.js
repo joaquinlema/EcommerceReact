@@ -75,7 +75,7 @@ const SearchInput = () => {
         <SearchIcon />
       </SearchIconWrapper>
       <StyledInputBase
-        placeholder="Search…"
+        placeholder="Buscar productos…"
         value={searchTerm}
         inputProps={{ 'aria-label': 'search' }}
         onChange={(e) => { setSearchTerm(e.target.value.replace(/[^\w\s]/gi, "")) }}

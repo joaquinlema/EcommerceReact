@@ -6,9 +6,10 @@ import Typography from '@mui/material/Typography';
 import { Avatar, Button, CardActionArea, CardActions, CardHeader, IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { lightBlue, green, red } from '@mui/material/colors';
+import { lightBlue, green } from '@mui/material/colors';
 import RoomRoundedIcon from '@mui/icons-material/RoomRounded';
 import PaymentRoundedIcon from '@mui/icons-material/PaymentRounded';
+import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 
 const ProductItem = ({ data }) => {
 
@@ -61,7 +62,7 @@ const ProductItem = ({ data }) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary">
+                <Button size="small" color="primary" variant="outlined" startIcon={<InfoRoundedIcon />}>
                     <Link to={`/productDetail/${id}`} underline="none" style={{ textDecoration: 'none' }}>
                         Info
                     </Link>

@@ -9,12 +9,9 @@ import PrivateRoute from './PrivateRoute';
 const AppRoute = () => {
     return (
         <Switch>
-            <PrivateRoute exact={true} path='/'>
-                <MainPage />
-            </PrivateRoute>
+            <PrivateRoute exact={true} path='/' component={MainPage} />
             <PrivateRoute path="/productDetail/:id" component={DetailPage} />
             <PrivateRoute path="/compras" component={BuysPage} />
-
             <Route component={NoMatchRoute} />
 
             {/* <Route exact path='/register' >

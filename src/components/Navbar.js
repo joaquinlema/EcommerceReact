@@ -8,10 +8,13 @@ import SearchInput from './SearchInput';
 import LogMenu from './LogMenu';
 import StoreRoundedIcon from '@mui/icons-material/StoreRounded';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom'
+
 
 const Navbar = () => {
 
     const [auth, setAuth] = React.useState(true);
+    const location = useLocation();
 
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -37,7 +40,7 @@ const Navbar = () => {
                         E-Commerce FIT Challenge
                     </Typography>
                     <Box sx={{ flexGrow: 1 }} />
-                    <SearchInput />
+                    {location.pathname === '/' && <SearchInput />}
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         {auth && (
