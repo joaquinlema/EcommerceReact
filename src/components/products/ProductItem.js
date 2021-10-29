@@ -40,14 +40,13 @@ const ProductItem = ({ data }) => {
                 />
                 <CardMedia
                     sx={{
-                        width: '30%',
-                        marginLeft: '30%'
+                        width: '50%',
+                        height: 'auto',
+                        marginLeft: '20%'
                     }}
                     component="img"
-                    height="140"
                     image={thumbnail}
                     alt="image"
-                    width='40%'
                 />
                 <CardContent sx={{ height: '100%' }}>
                     <Typography gutterBottom variant="h6" component="div">
