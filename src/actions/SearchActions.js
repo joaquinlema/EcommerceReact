@@ -3,7 +3,7 @@ import SearchService from "../service/SearchService";
 
 export const getSearhItems = query => async dispatch => {
     try {
-        const data = await SearchService.getSearchbyQuery(query);
+        const {data} = await SearchService.getSearchbyQuery(query);
 
         dispatch({
             type:GET_SEARCH_ITEMS,

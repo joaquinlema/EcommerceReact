@@ -1,13 +1,7 @@
-import mockData from '../actions/test';
 import http from '../helpers/AxiosInstance';
 
-const seccion = 'sites/MLA/search?q=';
-
 const getSearchbyQuery = (query) => {
-
-    return mockData;
-    //INFO: habilitar cuando tengamos acceso a la api
-    //  return http.get(`${seccion}?${query}`);
+    return http.get(`sites/MLA/search?q=${query}&limit=5`);
 };
 
 const SearchService = {

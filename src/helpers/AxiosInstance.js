@@ -6,14 +6,6 @@ const axiosInstance = axios.create({
 });
 
 axiosInstance.interceptors.request.use(function (config) {
-//TODO: SETEAR TOKEN 🔏
-//   if (token) {
-//     config.headers.Authorization = `Bearer ${token}`;
-//   }
-//   else {
-//     config.headers.Authorization = null;
-//   }
-
   return config;
 }, function (error) {
   return Promise.reject(error);
