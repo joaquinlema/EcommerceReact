@@ -27,7 +27,7 @@ export default function ProductDetail({ productData, productDescription }) {
                 />
             </Grid>
             <Grid item xs={8}>
-                <Card sx={{ minWidth: 275 }}>
+                <Card sx={{ minWidth: 275,boxShadow: 'none' }}>
                     <CardContent>
                         <Typography sx={{ fontSize: 16, color: '#00a650' }} gutterBottom>
                             Precio: {price}$

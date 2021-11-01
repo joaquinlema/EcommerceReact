@@ -8,6 +8,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import { useDispatch } from 'react-redux';
 import { comprarProduct } from '../../actions/ProductActions';
+import { Link } from 'react-router-dom';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -50,7 +51,7 @@ export default function ButtonBuyProduct({ producto }) {
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose}>Cancelar</Button>
-                    <Button onClick={handleBuy}>Si</Button>
+                    <Button component={Link} to={`/`} onClick={handleBuy}>Si</Button>
                 </DialogActions>
             </Dialog>
         </div>

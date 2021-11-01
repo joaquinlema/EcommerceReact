@@ -6,7 +6,7 @@ const initialState = {
     error: null,
     loadingProduct: false,
     productosComprados: [],
-    
+
 }
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (state = initialState, action) {
@@ -15,7 +15,7 @@ export default function (state = initialState, action) {
         case COMPRAR_PRODUCTO: 
         return {
             ...state,
-            productosComprados: [state.productosComprados, payload]
+            productosComprados: [...state.productosComprados, payload]
         }
         case CLEAN_PRODUCT_INFO :
             return {
