@@ -9,6 +9,7 @@ import Slide from '@mui/material/Slide';
 import { useDispatch } from 'react-redux';
 import { comprarProduct } from '../../actions/ProductActions';
 import { Link } from 'react-router-dom';
+import { Typography } from '@mui/material';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -46,7 +47,12 @@ export default function ButtonBuyProduct({ producto }) {
                 <DialogTitle>{`Comprar ${producto.title}`}</DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-slide-description">
-                        ¿Esta seguro que desea comprar el producto?
+                    <Typography gutterBottom variant="h6" component="div">
+                    ¿Esta seguro que desea comprar el producto ?
+                    </Typography>
+                    <Typography variant="body1" gutterBottom component="div" color="text.secondary">
+                       Costo Final:  $ {producto.price}
+                    </Typography>
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
