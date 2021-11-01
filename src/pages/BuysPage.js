@@ -1,10 +1,24 @@
 import { Container, Grid } from '@mui/material';
 import { Box } from '@mui/system';
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { setMensaje } from '../actions/AlertActions';
+import { cleanProduct } from '../actions/ProductActions';
 import BuysList from '../components/buys/BuysList';
+import Msj from '../components/Msj';
 
 const BuysPage = () => {
+    const { compradoOk } = useSelector(state => state.ProductReducer);
+
+    const { mensaje, severity, status } = useSelector(state => state.AlertReducer);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (compradoOk) { 
+            dispatch(setMensaje(true, 'Compra realizada con exito', 'success')); 
+            dispatch(cleanProduct())
+        }
+    }, []);
 
     return (
         <Box
@@ -20,6 +34,9 @@ const BuysPage = () => {
                     </Grid>
                     <Grid item xs={12}>
                         <BuysList />
+                    </Grid>
+                    <Grid>
+                        <Msj msj={mensaje} severity={severity} status={status}/>
                     </Grid>
                 </Grid>
             </Container>
