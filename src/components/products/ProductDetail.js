@@ -7,25 +7,28 @@ import Typography from '@mui/material/Typography';
 
 export default function ProductDetail({productData, productDescription}) {
 
+    const {thumbnail,title, price} = productData;
+    const {plain_text} = productDescription;
+
     return (
         <Card sx={{ display: 'flex' }}>
             <CardMedia
                 component="img"
                 sx={{ width: 151 }}
-                image="/static/images/cards/live-from-space.jpg"
-                alt="Live from space album cover"
+                image={thumbnail}
+                alt="img"
             />
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                 <CardContent sx={{ flex: '1 0 auto' }}>
                     <Typography component="div" variant="h5">
-                        Live From Space
+                       {title}
                     </Typography>
                     <Typography variant="subtitle1" color="text.secondary" component="div">
-                        Mac Miller
+                        {price}
                     </Typography>
                 </CardContent>
                 <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-
+                    
                 </Box>
             </Box>
         </Card>
