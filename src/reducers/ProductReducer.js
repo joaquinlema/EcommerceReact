@@ -1,15 +1,22 @@
-import { CLEAN_PRODUCT_INFO, ERROR, GET_SELECTED_ITEM, SET_LOADING_PRODUCT } from "../constants/types";
+import { CLEAN_PRODUCT_INFO, COMPRAR_PRODUCTO, ERROR, GET_SELECTED_ITEM, SET_LOADING_PRODUCT } from "../constants/types";
 
 const initialState = {
     productData: {},
     productDescription: {},
     error: null,
-    loadingProduct: false
+    loadingProduct: false,
+    productosComprados: [],
+    
 }
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (state = initialState, action) {
     const { type, payload } = action;
     switch (type) {
+        case COMPRAR_PRODUCTO: 
+        return {
+            ...state,
+            productosComprados: [state.productosComprados, payload]
+        }
         case CLEAN_PRODUCT_INFO :
             return {
                 ...state,

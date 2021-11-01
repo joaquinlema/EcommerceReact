@@ -2,13 +2,14 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Accordion, AccordionDetails, AccordionSummary, Button, Card, CardActions, CardContent, Divider, Grid } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Card, CardActions, CardContent, Divider, Grid } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { green } from '@mui/material/colors';
+import ButtonBuyProduct from './ButtonBuyProduct';
 
 export default function ProductDetail({ productData, productDescription }) {
 
-    const { thumbnail, title, price, warranty, original_price, sale_terms, available_quantity, accepts_mercadopago, shipping, seller_address } = productData;
+    const { thumbnail, title, price, warranty, original_price, sale_terms, available_quantity, shipping, seller_address } = productData;
     const { plain_text } = productDescription;
     const [expanded, setExpanded] = React.useState(false);
 
@@ -62,11 +63,11 @@ export default function ProductDetail({ productData, productDescription }) {
                         <Divider />
                     </CardContent>
                     <CardActions>
-                        <Button variant="outlined" disabled={(available_quantity < 1)}>Comprar</Button>
+                        <ButtonBuyProduct producto={productData}/>
                     </CardActions>
                 </Card>
             </Grid>
-            <Grid xs={12}>
+            <Grid item xs={12}>
                 <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
                     <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                         <AccordionSummary
