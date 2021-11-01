@@ -18,7 +18,7 @@ const LogMenu = () => {
     return (
         <div>
             <Button onClick={handleMenu} variant="text" color="inherit" size="large" startIcon={<AccountCircle />}>
-                Nombre persona
+                Joaquin Lema
             </Button>
             <Menu
                 id="menu-appbar"
