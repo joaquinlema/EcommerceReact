@@ -4,7 +4,6 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { cleanProduct, getSelectedProduct } from '../actions/ProductActions';
 import ProductDetail from '../components/products/ProductDetail';
-import ProductItemLoading from '../components/products/ProductItemLoading';
 
 const DetailPage = ({ match }) => {
 

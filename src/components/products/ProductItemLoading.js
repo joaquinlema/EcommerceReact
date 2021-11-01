@@ -1,4 +1,4 @@
-import { Grid, Skeleton } from '@mui/material'
+import { Skeleton } from '@mui/material'
 import React, { Fragment } from 'react';
 
 const ProductItemLoading = () => {
