@@ -4,7 +4,7 @@ import React from 'react'
 import ProductList from '../components/products/ProductList'
 
 const MainPage = () => {
-
+    
     return (
         <Box
             sx={{

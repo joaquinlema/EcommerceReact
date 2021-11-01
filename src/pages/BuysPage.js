@@ -1,9 +1,11 @@
 import { Container, Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react'
+import { useSelector } from 'react-redux';
 import BuysList from '../components/buys/BuysList';
 
 const BuysPage = () => {
+
     return (
         <Box
             sx={{

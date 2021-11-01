@@ -1,14 +1,15 @@
 import { Avatar, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material';
 import React from 'react';
 
-const BuysItem = () => {
+const BuysItem = ({producInfo}) => {
+  const {thumbnail, title, price} = producInfo;
     return (
         <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+          <Avatar alt="thumb" src={thumbnail} />
         </ListItemAvatar>
         <ListItemText
-          primary="Brunch this weekend?"
+          primary={title}
           secondary={
             <React.Fragment>
               <Typography
@@ -17,9 +18,9 @@ const BuysItem = () => {
                 variant="body2"
                 color="text.primary"
               >
-                Ali Connors
+               Precio: {price}$
               </Typography>
-              {" — I'll be in your neighborhood doing errands this…"}
+               {(new Date()).toString()}
             </React.Fragment>
           }
         />

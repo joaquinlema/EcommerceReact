@@ -7,7 +7,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-export default function ErrorMsj({severity, msj, openStatus}) {
+export default function Msj({ severity, msj, openStatus }) {
   const [open, setOpen] = React.useState(openStatus);
 
   const handleClose = (event, reason) => {

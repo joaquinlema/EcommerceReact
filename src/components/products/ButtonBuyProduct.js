@@ -51,7 +51,7 @@ export default function ButtonBuyProduct({ producto }) {
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose}>Cancelar</Button>
-                    <Button component={Link} to={`/`} onClick={handleBuy}>Si</Button>
+                    <Button component={Link} to={`/compras`} onClick={handleBuy}>Si</Button>
                 </DialogActions>
             </Dialog>
         </div>
