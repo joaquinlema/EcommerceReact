@@ -6,7 +6,9 @@ const ProductLoading = () => {
     return (
         <Grid container spacing={3}>
             {Array.from(new Array(6)).map((elem, index) => (
-                <ProductItemLoading key={index} />
+                <Grid item xs={4} key={index}>
+                    <ProductItemLoading />
+                </Grid>
             ))
             }
         </Grid>

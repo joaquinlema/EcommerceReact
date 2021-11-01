@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Grid, LinearProgress } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
@@ -22,7 +22,7 @@ const DetailPage = ({ match }) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id]);
 
-    if (loadingProduct) return <ProductItemLoading />
+    if (loadingProduct) return  <Box sx={{ width: '100%' }}><LinearProgress /></Box>
 
     return (
         <Box sx={{ flexGrow: 1, padding: '2%' }}>
