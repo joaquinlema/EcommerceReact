@@ -11,7 +11,7 @@ export default function BuysList() {
         <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
             {productosComprados.length > 0 && productosComprados.map((elem,index) => (
                 <>
-                    <BuysItem product={elem} key={index}/>
+                    <BuysItem producInfo={elem} key={index}/>
                     <Divider variant="inset" component="li" />
                 </>
             ))}

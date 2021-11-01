@@ -18,7 +18,7 @@ const BuysItem = ({producInfo}) => {
                 variant="body2"
                 color="text.primary"
               >
-               Precio: {price}$
+               Precio: $ {price}{'  '}  
               </Typography>
                {(new Date()).toString()}
             </React.Fragment>
