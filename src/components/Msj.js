@@ -25,7 +25,7 @@ export default function Msj({ severity, msj, openStatus }) {
 
   return (
     <Stack spacing={2} sx={{ width: '100%' }}>
-      <Snackbar open={openStatus} autoHideDuration={6000} onClose={handleClose}>
+      <Snackbar  anchorOrigin={{ vertical:"top", horizontal:'center' }} open={openStatus} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity={severity} sx={{ width: '100%' }}>
           {msj}
         </Alert>

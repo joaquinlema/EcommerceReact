@@ -3,13 +3,11 @@ import { Box } from '@mui/system';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { setMensaje } from '../actions/AlertActions';
-import { cleanComprarProduct } from '../actions/ProductActions';
 import BuysList from '../components/buys/BuysList';
 import Msj from '../components/Msj';
 
 const BuysPage = () => {
     const { compradoOk } = useSelector(state => state.ProductReducer);
-
     const { mensaje, severity, status } = useSelector(state => state.AlertReducer);
     const dispatch = useDispatch();
 
@@ -36,7 +34,7 @@ const BuysPage = () => {
                         <BuysList />
                     </Grid>
                     <Grid>
-                        <Msj msj={mensaje} severity={severity} status={status}/>
+                        <Msj msj={mensaje} severity={severity} openStatus={status}/>
                     </Grid>
                 </Grid>
             </Container>
