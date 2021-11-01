@@ -10,9 +10,12 @@ import { lightBlue, green } from '@mui/material/colors';
 import RoomRoundedIcon from '@mui/icons-material/RoomRounded';
 import PaymentRoundedIcon from '@mui/icons-material/PaymentRounded';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
+import { getSelectedProduct, setLoadingProduct } from '../../actions/ProductActions';
+import { useDispatch } from 'react-redux';
 
 const ProductItem = ({ data }) => {
 
+    const dispatch = useDispatch();
     const { id, title, price, thumbnail, shipping, address, accepts_mercadopago } = data;
 
     return (
@@ -20,7 +23,7 @@ const ProductItem = ({ data }) => {
             sx={{
                 backgroundColor: '#fffff',
             }}>
-            <CardActionArea component={Link} to={`/productDetail/${id}`}>
+            <CardActionArea component={Link} to={`/productDetail/${id}`} onClick={() => { dispatch(setLoadingProduct(true)); dispatch(getSelectedProduct(id))}}>
                 <CardHeader
                     avatar={
                         <Avatar sx={{ bgcolor: green[500] }} aria-label="recipe">
@@ -61,7 +64,7 @@ const ProductItem = ({ data }) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary" variant="outlined" startIcon={<InfoRoundedIcon />}>
+                <Button size="small" color="primary" variant="outlined" startIcon={<InfoRoundedIcon />} onClick={() => { dispatch(setLoadingProduct(true)); dispatch(getSelectedProduct(id))}}>
                     <Link to={`/productDetail/${id}`} underline="none" style={{ textDecoration: 'none' }}>
                         Info
                     </Link>

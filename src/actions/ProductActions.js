@@ -1,4 +1,4 @@
-import { ERROR, GET_SELECTED_ITEM } from "../constants/types";
+import { ERROR, GET_SELECTED_ITEM, SET_LOADING_PRODUCT } from "../constants/types";
 import ProductService from "../service/ProductService";
 
 export const getSelectedProduct = id => async dispatch => {
@@ -17,4 +17,11 @@ export const getSelectedProduct = id => async dispatch => {
             payload: `Error ${error}`
         });
     }
+}
+
+export const setLoadingProduct = status => dispatch => {
+    dispatch({
+        type: SET_LOADING_PRODUCT,
+        payload: status
+    })
 }

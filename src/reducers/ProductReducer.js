@@ -1,4 +1,4 @@
-import { ERROR, GET_SELECTED_ITEM, SET_LOADING } from "../constants/types";
+import { ERROR, GET_SELECTED_ITEM, SET_LOADING, SET_LOADING_PRODUCT } from "../constants/types";
 
 const initialState = {
     productData: {},
@@ -14,9 +14,10 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 productData: payload.productData,
-                productDescription: payload.productDescription
+                productDescription: payload.productDescription,
+                loadingProduct: false
             }
-        case SET_LOADING:
+        case SET_LOADING_PRODUCT:
             return {
                 ...state,
                 loadingProduct: payload

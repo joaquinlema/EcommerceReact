@@ -3,3 +3,4 @@ export const ERROR = 'ERROR';
 export const devUrl = 'https://api.mercadolibre.com/';
 export const SET_LOADING = 'SET_LOADING';
 export const GET_SELECTED_ITEM = 'GET_SELECTED_ITEM';
+export const SET_LOADING_PRODUCT = 'SET_LOADING_PRODUCT';
