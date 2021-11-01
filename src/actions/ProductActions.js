@@ -1,4 +1,4 @@
-import { ERROR, GET_SELECTED_ITEM, SET_LOADING_PRODUCT } from "../constants/types";
+import { CLEAN_PRODUCT_INFO, ERROR, GET_SELECTED_ITEM, SET_LOADING_PRODUCT } from "../constants/types";
 import ProductService from "../service/ProductService";
 
 export const getSelectedProduct = id => async dispatch => {
@@ -23,5 +23,11 @@ export const setLoadingProduct = status => dispatch => {
     dispatch({
         type: SET_LOADING_PRODUCT,
         payload: status
-    })
+    });
+}
+
+export const cleanProduct = () => dispatch => {
+    dispatch({
+        type: CLEAN_PRODUCT_INFO,
+    });
 }

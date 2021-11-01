@@ -5,7 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
-export default function ProductDetail() {
+export default function ProductDetail({productData, productDescription}) {
 
     return (
         <Card sx={{ display: 'flex' }}>
