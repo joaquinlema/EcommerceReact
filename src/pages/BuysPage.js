@@ -3,7 +3,7 @@ import { Box } from '@mui/system';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { setMensaje } from '../actions/AlertActions';
-import { cleanProduct } from '../actions/ProductActions';
+import { cleanComprarProduct } from '../actions/ProductActions';
 import BuysList from '../components/buys/BuysList';
 import Msj from '../components/Msj';
 
@@ -16,8 +16,8 @@ const BuysPage = () => {
     useEffect(() => {
         if (compradoOk) { 
             dispatch(setMensaje(true, 'Compra realizada con exito', 'success')); 
-            dispatch(cleanProduct())
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

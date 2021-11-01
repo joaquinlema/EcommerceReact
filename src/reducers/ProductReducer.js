@@ -1,4 +1,4 @@
-import { CLEAN_PRODUCT_INFO, COMPRAR_PRODUCTO, ERROR, GET_SELECTED_ITEM, SET_LOADING_PRODUCT } from "../constants/types";
+import { CLEAN_COMPRA, CLEAN_PRODUCT_INFO, COMPRAR_PRODUCTO, ERROR, GET_SELECTED_ITEM, SET_LOADING_PRODUCT } from "../constants/types";
 
 const initialState = {
     productData: {},
@@ -24,8 +24,12 @@ export default function (state = initialState, action) {
                 productData: {},
                 productDescription: {},
                 loadingProduct: false,
-                compradoOk: false
             }
+            case CLEAN_COMPRA:
+                return {
+                    ...state,
+                    compradoOk:false
+                }
         case GET_SELECTED_ITEM:
             return {
                 ...state,

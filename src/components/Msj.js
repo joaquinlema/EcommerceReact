@@ -4,6 +4,7 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import { useDispatch } from 'react-redux';
 import { setMensaje } from '../actions/AlertActions';
+import { cleanComprarProduct } from '../actions/ProductActions';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -18,6 +19,8 @@ export default function Msj({ severity, msj, openStatus }) {
     }
 
     dispatch(setMensaje(false, '', ''));
+    dispatch(cleanComprarProduct());
+
   };
 
   return (
